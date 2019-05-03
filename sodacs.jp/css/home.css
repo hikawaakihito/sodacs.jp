@@ -1,0 +1,278 @@
+@charset "UTF-8";
+
+/*Homepage common settings*/
+
+body {
+	color: #ffffff;
+	background-color: #550000;
+}
+
+/*Individual settings*/
+
+/*Main*/
+
+/*Small logo*/
+
+#logoS1 {
+    display: none;
+}
+
+#logoS2 {
+    display: none;
+}
+
+ /*Logo effects*/
+
+#logoL {
+    padding: 2em 0 3em 0;
+   /* -webkit-animation: logoLFade 1000ms linear 250ms 1 normal both running;*/
+    -webkit-animation-name: logoLFade;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 250ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-play-state: running;
+    /*animation: logoLFade 1000ms linear 250ms 1 normal both running;*/
+    animation-name: logoLFade;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+    animation-delay: 250ms;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-play-state: running;
+}
+
+@-webkit-keyframes logoLFade{
+    0% {
+        opacity: 0;
+        -webkit-filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));   
+    }
+    50% {
+        opacity: 1; 
+        -webkit-filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));             
+    }
+    100% {
+        -webkit-filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0.7));
+        filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0.7));         
+    }
+}
+
+@keyframes logoLFade{
+    0% {
+        opacity: 0;
+        -webkit-filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));   
+    }
+    50% {
+        opacity: 1; 
+        -webkit-filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+        filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));             
+    }
+    100% {
+        opacity: 1; 
+        -webkit-filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0.7));
+        filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0.7));         
+    }
+}
+
+/*Text reveal */
+
+.revealContainer {
+    position: relative;
+    width: 25em;
+    padding: 0;
+    margin: 0 auto;
+    font-family: "遊ゴシック", YuGothic, sans-serif;
+}
+
+.revealText {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+	font-size: 3em;
+    /*-webkit-animation: revealText 1000ms linear 250ms 1 normal both running;*/
+    -webkit-animation-name: revealText;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 250ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-play-state: running;
+    /*animation: revealText 1000ms linear 250ms 1 normal both running;*/
+    animation-name: revealText;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+    animation-delay: 250ms;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-play-state: running;
+}
+
+@-webkit-keyframes revealText{
+    0%{
+        -webkit-clip-path: inset(0 100% 0 0);
+        clip-path: inset(0 100% 0 0);
+    }
+    50% {
+        -webkit-clip-path: inset(0 100% 0 0);
+        clip-path: inset(0 100% 0 0);
+    }
+    100%{
+        -webkit-clip-path: inset(0 0 0 0);
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes revealText{
+    0%{
+        -webkit-clip-path: inset(0 100% 0 0);
+        clip-path: inset(0 100% 0 0);
+    }
+    50% {
+        -webkit-clip-path: inset(0 100% 0 0);
+        clip-path: inset(0 100% 0 0);
+    }
+    100%{
+        -webkit-clip-path: inset(0 0 0 0);
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.revealBlock {
+    position: absolute;
+    border-left: solid 3px #b3b3b3;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #b3b3b3;
+    /*-webkit-animation: revealBlock 1500ms linear 250ms 1 normal both running;*/
+    -webkit-animation-name: revealBlock;
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 250ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-direction: normal;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-play-state: running;
+    /*animation: revealBlock 1500ms linear 250ms 1 normal both running;*/
+    animation-name: revealBlock;
+    animation-duration: 1500ms;
+    animation-timing-function: linear;
+    animation-delay: 250ms;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-play-state: running;
+}
+
+@-webkit-keyframes revealBlock{
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+    33% {
+        left: 0;
+        opacity: 1;
+    }
+    66% {        
+        left: 100%;
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes revealBlock{
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+    33% {
+        left: 0;
+        opacity: 1;
+    }
+    66% {        
+        left: 99%;
+        opacity: 1;
+    }
+    100% {
+        left: 99%;
+        opacity: 0;
+    }
+}
+
+/*Footer*/
+
+#footer {
+    color: #ffffff;
+    background-color: #550000;
+}
+
+/*------------------------------------------Mobile screen size----------------------------------*/
+
+@media screen and (max-width: 650px) {
+
+    /*Small logo*/
+
+
+    #logoS1 {
+        display: none;
+    }
+
+    #logoS2 {
+       display: none;
+    }
+
+
+    /*Logo effects*/
+
+    #logoL{
+        width: 10em;
+    }
+
+    /*Text reveal*/
+
+    .revealContainer {
+        width: 18em;
+    }
+    
+    .revealText {
+        font-size: 33px;
+    }
+
+    	/*Footer*/
+
+	#footer {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+	    align-items: center;
+		margin: 8px 8px;
+	}
+
+	#githubLink {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+		height: 24px;
+		float: left;
+	}
+
+	#copyright {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+		float: right;
+		font-size: 16px;
+	}
+}

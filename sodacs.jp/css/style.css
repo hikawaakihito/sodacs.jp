@@ -1,0 +1,832 @@
+@charset "UTF-8";
+
+/*Common settings*/
+
+body {
+	color: #333333;
+	background-color: #f3f3f3;
+	/*font-family: "遊明朝", Yumincho, "Yu Mincho", serif;*/
+	font-family: sans-serif;
+}
+
+hr {
+	margin: 3em 0;
+	width: 100%;
+	border: dotted 1px #333333;
+
+}
+
+.externalLink1 {
+	color: #c87137;
+	text-decoration: underline;
+}
+
+.externalLink2 {
+	color: #008080;
+	text-decoration: underline;
+}
+
+/*Individual settings*/
+
+/*Header*/
+
+#menuWrapper {
+	width: 100%;
+	background-color: #333333;
+	/*font-family: "遊明朝", Yumincho, "Yu Mincho", serif;*/
+	font-family: sans-serif;
+}
+
+header ul {
+	min-width: 650px;
+	float: right;
+}
+
+header li {
+	float: right;
+}
+
+li a, .dropdownButton{
+	display: inline-block;
+	text-decoration: none;
+	color: #ffffff;
+	padding: 1em 2em;
+}
+
+li a:hover, .dropdownMenu:hover .dropdownButton {
+	background-color: #c87137;
+}
+
+.dropdownMenu {
+	display: inline-block;
+}
+
+.dropdownContent {
+	display: none;
+	position: absolute;
+	background-color: #c87137;
+	width: 15em;
+	box-shadow: 2px 3px 3px rgba(26, 26, 26, 1);
+	z-index: 1;
+}
+
+.dropdownContent a {
+	color: #ffffff;
+	border-top: solid 1px #b3b3b3;
+	padding: 1em 1em;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdownContent a:hover {
+	color: #ffffff;
+	background-color: #b3b3b3;
+}
+
+.dropdownMenu:hover .dropdownContent{
+	display: block;
+}
+
+#logoS1 {
+    display: none;
+}
+
+
+#logoS2 {
+	margin: 8px 0 0 2em;
+	height: 2em;
+	float: left;
+}
+
+#pageName1 {
+	display: none;
+}
+
+#pageName2 {
+	margin: 1em 2em;
+	color: #cccccc;
+	float:left;
+}
+/*Main*/
+
+#contentWrapper {
+    width:100%;    
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content {
+    width:100%;   
+    padding: 0;
+	text-align: center;
+}
+/*Portfolio*/
+
+.portfolioCard {
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	background-color: #ffffff;
+	margin: 2em;
+	width: 25em;
+	min-height: 40em;
+	text-align: center;
+	box-shadow: 2px 6px 15px rgba(0, 0, 0, 1);
+	/*font-family: "遊明朝", Yumincho, "Yu Mincho", serif;*/
+	font-family: sans-serif;
+	-webkit-animation: portfolio 250ms linear 0ms 1 normal both running;
+	animation: portfolio 250ms linear 0ms 1 normal both running;
+}
+
+@-webkit-keyframes portfolio{
+	from {
+		transform: scale(0.0);
+	}
+	to {
+		transform: scale(1.0);
+	}
+}
+
+@keyframes portfolio{
+	from {
+		transform: scale(0.0);
+	}
+	to {
+		transform: scale(1.0);
+	}
+}
+
+.portfolioInner {
+	margin: 0 0 1em 0;
+	text-align: center;
+}
+
+.portfolioInner h3 {
+	margin-top: 5em;
+}
+
+.portfolioCardHeader {
+	box-sizing: border-box;
+	border: solid 2px white;
+	color: #ffffff;
+	background-color: #00222b;
+	width: 25em;
+	text-align: center;
+}
+
+.portfolioCardHeaderArchive {
+	box-sizing: border-box;
+	border: solid 2px white;
+	color: #ffffff;
+	background-color: #222b00;
+	width: 25em;
+	text-align: center;
+}
+
+.portfolioPicArea {
+	position: relative;
+	box-sizing: border-box;
+	border-top: none;
+	border-right: solid 2px white;
+	border-left: solid 2px white;
+	color: #ffffff;
+	background-color: #cccccc;
+	width: 25em;
+	height: 10em;
+	text-align: center;
+}
+
+.portfolioPic {
+	position: relative;
+	top: 2em;
+	width: 80%;
+}
+
+.portfolioInfo {
+	position: relative;
+	border-bottom: solid 2px #cccccc;
+	color: #333333;
+	margin: 0 auto;
+	width: 20em;
+	height: 7em;
+	text-align: left;
+	overflow: hidden;
+}
+
+.portfolioInfo:after {
+	position: absolute;
+	bottom: 0;  
+	height: 100%;
+	width: 100%;
+	content: "";
+	background: linear-gradient(to top,
+	   rgba(255,255,255, 1) 5%, 
+	   rgba(255,255,255, 0) 65%
+	);
+	pointer-events: none; /*文字が選択可能になるように*/
+}
+
+.portfolioInfoArchive {
+	position: relative;
+	color: #333333;
+	margin: 0 auto;
+	padding-top: 6em;
+	width: 20em;
+	height: 7em;
+	text-align: left;
+	overflow: hidden;
+}
+
+.portfolioButtonContainer {
+	position: absolute;
+	bottom: 4em;
+	width: 100%;
+}
+
+.portfolioButton {
+	position: relative;
+	width: 200px;
+	height: 50px;
+	margin: 0 auto;
+	padding: 0;
+	border: none;
+	color: #ffffff;
+	background-color: #c87137;
+	cursor: pointer;
+}
+
+.portfolioButton:hover {
+	background-color: #b86f3f;
+}
+
+.center {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 100%;
+}
+ 
+/*Project Details*/
+
+.projectCard {
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	background-color: #ffffff;
+	margin: 2em;
+	width: 50em;
+	min-height: 40em;
+	text-align: center;
+	box-shadow: 2px 6px 15px rgba(0, 0, 0, 1);
+	/*font-family: "遊明朝", Yumincho, "Yu Mincho", serif;*/
+	font-family: sans-serif;
+	-webkit-animation: contact 350ms linear 0ms 1 normal both running;
+	animation: contact 350ms linear 0ms 1 normal both running;
+}
+
+.projectInner {
+	margin: 0 0 1em 0;
+	text-align: center;
+}
+
+.projectInner h3 {
+	margin-top: 2em;
+}
+
+.projectCardHeader {
+	box-sizing: border-box;
+	border: solid 2px white;
+	color: #ffffff;
+	background-color: #00222b;
+	width: 100%;
+	text-align: center;
+}
+
+.projectCardHeaderArchive {
+	box-sizing: border-box;
+	border: solid 2px white;
+	color: #ffffff;
+	background-color: #222b00;
+	width: 100%;
+	text-align: center;
+}
+
+.projectPicArea {
+	position: relative;
+	box-sizing: border-box;
+	border-top: none;
+	border-right: solid 2px white;
+	border-left: solid 2px white;
+	color: #ffffff;
+	background-color: #cccccc;
+	width: 100%;
+	text-align: center;
+}
+
+.projectPic {
+	margin: 2em 0;
+	width: 60%;
+}
+
+.archivePic {
+	margin: 2em 0;
+}
+
+.projectInfo {
+	margin: 0 auto;
+	width: 80%;
+	text-align: left;
+}
+
+.archiveInfo {
+	padding-top: 2em;
+	margin: 0 auto;
+	width: 60%;
+	text-align: left;
+}
+
+/*About & Contact*/
+
+#profilePic {
+	width: 100px;
+}
+.cardWrapper {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+}
+
+.contactCard {
+	flex-shrink: 0;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	background-color: #ffffff;
+	margin: 2em;
+	border: outset 1px #cccccc;
+	width: 50em;
+	min-height: 47em;
+	text-align: center;
+	box-shadow: 2px 6px 15px rgba(0, 0, 0, 1);
+	/*font-family: "遊明朝", Yumincho, "Yu Mincho", serif;*/
+	font-family: sans-serif;
+	-webkit-animation: contact 350ms linear 0ms 1 normal both running;
+	animation: contact 350ms linear 0ms 1 normal both running;
+}
+
+@-webkit-keyframes contact{
+	from {
+		top: 1000px;
+	}
+	to {
+		top: 0;
+	}
+}
+
+@keyframes contact{
+	from {
+		top: 1000px;
+	}
+	to {
+		top: 0;
+	}
+}
+
+.contactInner {
+	margin: 1em 0 1em 0;
+	width: 40em;
+	text-align: left;
+}
+.contactInner h1 {
+	color: #225500;
+}
+
+form {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+label {
+	margin: 1em 0 4px 0;
+}
+
+input[type=text], input[type=email] {
+	width: 25em;
+}
+
+textarea {
+	height: 15em;
+}
+
+input[type=submit] {
+	width: 200px;
+	height: 50px;
+	margin: 1em 0 1em 0;
+	border: none;
+	color: #ffffff;
+	background-color: #c87137;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #b86f3f;
+}
+
+.error {
+	color: #ff0000;
+}
+
+/*Footer*/
+
+#footer {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+    align-items: center;
+	margin: 1em 2em;
+}
+
+
+
+#githubLink {
+	height: 20px;
+	float: left;
+}
+
+#copyright {
+	float: right;
+}
+
+/*------------------------------------------Mobile screen size----------------------------------*/
+
+@media screen and (max-width: 650px) {
+	
+	/*Header*/
+
+	header {
+		width: 100%;
+		height: 46px;
+	}
+
+	#logoS1 {
+		margin: 0;
+		display: block;
+		height: 30px;
+		float: left;
+		position: relative;
+	}
+
+	#logoS2 {
+		display: none;
+	}
+
+	#pageName1 {
+		display: block;
+		margin: 8px 8px 0 8px;
+		color: #cccccc;
+		float:left;
+	}
+
+	#pageName2 {
+		display: none;
+	}
+
+	#menuIconWrapper {
+		position: absolute;
+		width: 100%;
+		background-color: #333333;
+		padding: 8px 8px 8px 8px;
+		box-sizing: border-box; 
+		z-index: 2;
+	}
+
+	.trigger, .trigger span {
+		display: inline-block;
+		transition: all .4s;
+		box-sizing: border-box;
+	}
+
+	.trigger {
+		position: relative;
+		width: 35px;
+		height: 30px;
+		float: right;
+	}
+
+	.trigger span {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 5px;
+		background-color: #ffffff;
+		border-radius: 4px;
+		opacity: 1;
+	}
+
+	.trigger a:hover {
+		opacity: 1;
+	}
+
+	.trigger span:nth-of-type(1) {
+		top: 0;
+	}
+
+	.trigger span:nth-of-type(2) {
+		top: 12px;
+	}
+
+	.trigger span:nth-of-type(3) {
+		bottom: 0;
+	}
+
+	.trigger.active span:nth-of-type(1) {
+		-webkit-transform: translateY(10px) rotate(-45deg);
+		transform: translateY(10px) rotate(-45deg);
+	}
+
+	.trigger.active span:nth-of-type(2) {
+		left: 50%;
+		opacity: 0;
+		-webkit-animation: activeMenuBar02 .8s forwards;
+		animation: activeMenuBar02 .8s forwards;
+	}
+
+	@-webkit-keyframes activeMenuBar02 {
+		100% {
+			height: 0;
+		}
+	}
+
+	@keyframes activeMenuBar02 {
+		100% {
+			height: 0;
+		}
+	}
+
+	.trigger.active span:nth-of-type(3) {
+		-webkit-transform: translateY(-15px) rotate(45deg);
+		transform: translateY(-15px) rotate(45deg);
+	}
+
+	.onAnimation {
+		position: absolute;
+		width: 100%;
+		display: block;
+		-webkit-animation: dropDown 600ms forwards;
+		animation: dropDown 600ms forwards;
+	}
+
+	@-webkit-keyframes dropDown {
+		from {
+			top: -100%;
+		}
+		to {
+			top: 46px;
+		}
+	}
+
+	@keyframes dropDown {
+		from {
+			top: -100%;
+		}
+		to {
+			top: 46px;
+		}
+	}
+
+	header nav {
+		display: none;
+		position: relative;
+		z-index: 1;
+		width: 100%;
+	}
+
+	#menuWrapper {
+		width: 100%;
+		background-color: #333333;
+		font-family: sans-serif;
+	}
+
+	header ul {
+		display: block;
+		min-width: 0px;
+		width: 100%;
+		border-top: solid 1px #b3b3b3;
+	}
+
+	header li {
+		width: 100%;
+		float: none;
+		border-bottom: solid 1px #b3b3b3;
+	}
+
+	li a, .dropdownButton{
+		display: inline-block;
+		width: 100%;
+		text-decoration: none;
+		color: #ffffff;
+		padding: 1em 2em;
+	}
+
+	li a:hover, .dropdownMenu:hover .dropdownButton {
+		background-color: #c87137;
+	}
+
+	.dropdownMenu {
+		display: inline-block;
+	}
+
+	.dropdownContent {
+		display: block;
+		position: relative;
+		background-color: #ffffff;
+		width: 100%;
+		z-index: 1;
+		box-shadow: none;
+	}
+
+	.dropdownContent a {
+		color: #c87137;
+		/*border-top: solid 1px #b3b3b3;*/
+		padding: 1em 1em;
+		text-decoration: none;
+		display: block;
+	}
+
+	.dropdownContent a:hover {
+		color: #ffffff;
+		background-color: #b3b3b3;
+	}
+
+	.dropdownMenu:hover .dropdownContent{
+		display: block;
+	}
+
+	#logoS {
+		margin: 8px 0 0 2em;
+		height: 2em;
+		float: left;
+	}
+
+	#pageName {
+		margin: 1em 0 0 2em;
+		color: #cccccc;
+		float:left;
+	}
+
+	/*About & Contact*/
+
+	.contactCard {
+		margin: 1em 0 2em 0;
+		width: 95%;
+		min-height: 0;
+	}
+
+	.contactInner {
+		margin: 16px 8px;
+		width: 40em;
+		text-align: left;
+	}
+	.contactInner h1 {
+		color: #225500;
+		font-size: 24px;
+	}
+
+	.contactInner p {
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+	
+	input[type=text], input[type=email] {
+		width: 90%;
+		border-radius: 0;
+	}
+	
+	textarea {
+		width: 95%;
+		height: 20em;
+		border-radius: 0;
+	}
+	
+	input[type=submit] {
+		width: 200px;
+		height: 50px;
+		margin: 2em 0 1em 0;
+		border: none;
+		border-radius: 0;
+		color: #ffffff;
+		background-color: #c87137;
+		cursor: pointer;
+	}
+
+	.contactInner hr {
+		width: 100%;
+	}
+
+	/*Portfolio*/
+
+	.portfolioCard {
+		margin-top: 1em;
+		width: 95%;
+	}
+
+	@-webkit-keyframes portfolio{
+		from {
+			top: 1000px;
+		}
+		to {
+			top: 0px;
+		}
+	}
+	
+	@keyframes portfolio{
+		from {
+			top: 1000px;
+		}
+		to {
+			top: 0px;
+		}
+	}
+
+	.portfolioInner {
+		margin: 0;
+		width: 100%;
+		text-align: center;
+	}
+	.portfolioInner h1 {
+		font-size: 24px;
+	}
+
+	.portfolioInner p {
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+
+	.portfolioCardHeader {
+		width: 100%;
+	}
+	
+	.portfolioCardHeaderArchive {
+		width: 100%;
+	}
+
+
+	.portfolioPicArea {
+
+		width: 100%;
+		height: 10em;
+	}
+
+	.portfolioPic {
+		width: 80%;
+	}
+
+	/*Project Details*/
+
+	.projectCard {
+		margin: 1em 0 2em 0;
+		width: 95%;
+		min-height: 0px;
+	}
+
+	.projectInfo {
+		margin: 0 auto;
+		width: 85%;
+		text-align: left;
+	}
+
+	.archiveInfo {
+		padding-top: 2em;
+		margin: 0 auto;
+		width: 85%;
+		text-align: left;
+	}
+
+	/*Footer*/
+
+	#footer {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+	    align-items: center;
+		margin: 8px 8px;
+	}
+
+	#githubLink {
+		height: 24px;
+		float: left;
+	}
+
+	#copyright {
+		float: right;
+		font-size: 16px;
+	}
+}
