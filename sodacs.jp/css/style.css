@@ -16,14 +16,16 @@ hr {
 
 }
 
-.externalLink1 {
+.internalLink1 {
 	color: #c87137;
 	text-decoration: underline;
+	word-break: break-word;
 }
 
-.externalLink2 {
+.externalLink1 {
 	color: #008080;
 	text-decoration: underline;
+	word-break: break-word;
 }
 
 /*Individual settings*/
@@ -295,6 +297,10 @@ li a:hover, .dropdownMenu:hover .dropdownButton {
 	text-align: center;
 }
 
+.projectLink {
+	word-wrap: break-word;
+}
+
 .projectInner h3 {
 	margin-top: 2em;
 }
@@ -440,6 +446,10 @@ input[type=submit]:hover {
 	background-color: #b86f3f;
 }
 
+.honeypot {
+	display: none;
+}
+
 .error {
 	color: #ff0000;
 }
@@ -580,8 +590,8 @@ input[type=submit]:hover {
 		position: absolute;
 		width: 100%;
 		display: block;
-		-webkit-animation: dropDown 600ms forwards;
-		animation: dropDown 600ms forwards;
+		-webkit-animation: dropDown 400ms forwards;
+		animation: dropDown 400ms forwards;
 	}
 
 	@-webkit-keyframes dropDown {
@@ -691,18 +701,14 @@ input[type=submit]:hover {
 	}
 
 	.contactInner {
-		margin: 16px 8px;
-		width: 40em;
+		margin: 16px 16px;
+		width: 100%;
 		text-align: left;
 	}
+
 	.contactInner h1 {
 		color: #225500;
 		font-size: 24px;
-	}
-
-	.contactInner p {
-		margin-left: 1em;
-		margin-right: 1em;
 	}
 	
 	input[type=text], input[type=email] {
@@ -808,6 +814,11 @@ input[type=submit]:hover {
 		margin: 0 auto;
 		width: 85%;
 		text-align: left;
+	}
+
+	.projectLink {
+		margin: 0 auto;
+		width: 85%;
 	}
 
 	/*Footer*/
