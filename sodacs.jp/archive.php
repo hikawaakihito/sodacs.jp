@@ -57,11 +57,11 @@
 							<div class="archiveInfo">
 								<h2>ソダックス 1.01</h2>
 								<p>プロジェクト詳細：</p>
-								<p><a class="externalLink1" href="projects/sodacs.php">www.sodacs.jp/projects/sodacs.php</a></p>
+								<p><a class="internalLink1" href="projects/sodacs.php">www.sodacs.jp/projects/sodacs.php</a></p>
 								<p>プロジェクトを試す：</p>
-								<p><a class="externalLink1" href="index.php">www.sodacs.jp</a></p>
+								<p><a class="internalLink1" href="index.php">www.sodacs.jp</a></p>
 								<p>関連ファイルダウンロード：</p>
-								<p><a class="externalLink2" href="">www.github.???????</a></p>
+								<p><a class="externalLink1" href="https://github.com/hikawaakihito/sodacs.jp">https://github.com/hikawaakihito/sodacs.jp</a></p>
 								<br />
 							</div>
 						</div>
