@@ -56,11 +56,11 @@
 							<div class="projectInfo"><p>　初プロジェクトとしてレスポンシブデザインに心がけました。私自身のポートフォリオサイトだからこそ、自分らしくシンプルに、またできるだけオリジナルに出来上がるように頑張りました。HTML、CSS、PHP、またはJAVASCRIPTを使い、ゼロから計画し、一行一行コーディングしました。非常におもしろい経験でした。</p></div>
 							<h3>このプロジェクトを試す：</h3>
 							<br />
-							<p><a class="externalLink1" href="../index.php">www.sodacs.jp</a></p>
+							<div class="projectLink"><p><a class="internalLink1" href="../index.php">www.sodacs.jp</a></p></div>
 							<br />
 							<h3>ソースコード・関連ファイル</h3>
 							<div class="projectInfo"><p>　ソースコードやモックアップ等をGITHUBに載せております。自由にダウンロードできます。※参照のために載せております。このサイトの内容やロゴ等の再使用を許可しません。</p></div>
-							<p><a class="externalLink2" href="">www.github.???????</a></p>
+							<div class="projectLink"><p><a class="externalLink1" href="https://github.com/hikawaakihito/sodacs.jp">https://github.com/hikawaakihito/sodacs.jp</a></p></div>
 							<br />
 						</div>
 					</div>
