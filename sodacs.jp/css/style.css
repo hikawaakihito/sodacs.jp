@@ -37,6 +37,7 @@ hr {
 	background-color: #333333;
 	/*font-family: "遊明朝", Yumincho, "Yu Mincho", serif;*/
 	font-family: sans-serif;
+	min-width: 960px;
 }
 
 header ul {
@@ -477,7 +478,7 @@ input[type=submit]:hover {
 
 /*------------------------------------------Mobile screen size----------------------------------*/
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 900px) {
 	
 	/*Header*/
 
@@ -507,6 +508,10 @@ input[type=submit]:hover {
 
 	#pageName2 {
 		display: none;
+	}
+
+	#menuWrapper {
+		min-width: 0px;
 	}
 
 	#menuIconWrapper {
