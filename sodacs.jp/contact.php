@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="css/style.css"/>
 	<script type="text/javascript" src ="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" ></script>
 	<script type="text/javascript" src="js/main.js"></script>
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 	<header>
@@ -50,22 +49,21 @@
 				<div class="cardWrapper">
 					<div class="contactCard">
 						<div class="contactInner">
+							<!--コンタクトフォームプログラム-->
 							<?php
+								/*どのコンテンツを表示するか決めるためにflagを確認る*/
 								if(isset($_POST["flag"])){$flag=$_POST["flag"];}else{$flag=0;}; 
 
-								$captchaError ='';
-								if(isset($_POST["g-recaptcha-response"])){
-									$captcha = $_POST["g-recaptcha-response"];
-									$secretKey = "6LdRC6EUAAAAAE5_TctXE-p7cb-EUKPEPb0y5V2N";
-									$resp = @file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secretKey}&response={$captcha}");
-									$resp_result = json_decode($resp,true);
-									if(intval($resp_result["success"]) !== 1) {
-										//認証失敗時の処理をここに書く
-										$flag=1;
-										$captchaError ='<span class="error">CAPTCHAエラー。お手数ですが、ロボットではないことを確認してからもう一度送信して下さい。</span>';
-									}
+								/*隠し要素にボットが何かを入力してしまったかどうかチェックする*/
+								$hiddenError ='';
+									if(isset($_POST["hidden"])){
+										if($_POST["hidden"] !== "") {
+											$flag=1;
+											$hiddenError ='<span class="error">エラー。お手数ですが、ロボットではないことを確認するために、自動入力を使わないでもう一度送信して下さい。</span>';
+										}
 								}
 
+								/*最初の未入力フォームを表示する*/
 								if($flag==0){
 									print '<h1>お問い合わせフォーム</h1>
 									<form action="" method="post">
@@ -90,6 +88,7 @@
 									<p>※このフォームを使ったお問い合わせはsodacs.jpのメールアドレスに届きます。その後、私のプライベートメールアドレスにも転送されます。できるだけ早く返事しますが、遅れる場合があります。ライブチャットなど他の方法で連絡したい方は、まずはメールでご相談下さい。</p>
 									';
 								}
+								/*エラーメッセージもしくは内容確認画面を表示する*/
 								elseif($flag ==1){
 									$flagSwitch = 2;
 									$myoujiError = '';
@@ -106,7 +105,8 @@
 									if(empty($_POST["emailAddress"]) || !preg_match('/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/iD', $_POST["emailAddress"])){$_POST["emailAddress"]=''; $emailAddressError='<span class="error">※必須：正しいメールアドレスを入力して下さい。</span>'; $flagSwitch=1;}
 									if(empty($_POST["emailSubject"])){$_POST["emailSubject"]=''; $emailSubjectError='<span class="error">※必須：お問い合わせの題名を必ず入力して下さい。</span>'; $flagSwitch=1;}
 									if(empty($_POST["emailMessage"])){$_POST["emailMessage"]=''; $emailMessageError='<span class="error">※必須：メッセージを必ず書いて下さい。</span>'; $flagSwitch=1;}
-									if($flagSwitch == 1){
+								/*エラーメッセージを表示する*/
+								if($flagSwitch == 1){
 										print '<h1>お問い合わせフォーム</h1>
 										<form action="" method="post">
 											<span class="error">正しく入力されていない項目があります。（※全項目は必須です。）</span>
@@ -130,10 +130,11 @@
 										<p>※このフォームを使ったお問い合わせはsodacs.jpのメールアドレスに届きます。その後、私のプライベートメールアドレスにも転送されます。できるだけ早く返事しますが、遅れる場合があります。ライブチャットなど他の方法で連絡したい方は、まずはメールでご相談下さい。</p>
 										';
 									}
-									if($flagSwitch == 2){
+								/*内容確認画面を表示する*/
+								if($flagSwitch == 2){
 										print'<h1>お問い合わせ内容確認</h1>
 										<form action="" method="post">
-											'.$captchaError.'
+											'.$hiddenError.'
 											<p><strong>姓：</strong>　'.htmlspecialchars($_POST["myouji"], 3).'</p>
 											<input type="hidden" id="mName" name="myouji" value="'.htmlspecialchars($_POST["myouji"], 3).'" />
 											<p><strong>名：</strong>　'.htmlspecialchars($_POST["namae"], 3).'</p>
@@ -153,23 +154,26 @@
 											<p>'.htmlspecialchars($_POST["emailMessage"], 3).'</p>
 											<input type="hidden" id="message" name="emailMessage" value="'.htmlspecialchars($_POST["emailMessage"], 3).'"></textarea>
 											<br />
-											<div class="g-recaptcha" data-sitekey="6LdRC6EUAAAAAOzr8_LWDA4Tw50u98VDhIfYUpnh"></div>
+											<input type="text" class="honeypot" name="hidden" value="" />
 											<input type="hidden" name="flag" value="'.$flagSwitch.'" />
+											<hr />
 											<input type="submit" value="送信する" />
 										</form>
 										<p>※このフォームを使ったお問い合わせはsodacs.jpのメールアドレスに届きます。その後、私のプライベートメールアドレスにも転送されます。できるだけ早く返事しますが、遅れる場合があります。ライブチャットなど他の方法で連絡したい方は、まずはメールでご相談下さい。</p>
 										';
 									}
 								}
+								/*送信を試行して、結果を表示する*/
 								elseif($flag == 2){
 									mb_language("Japanese");
 									mb_internal_encoding("UTF-8");
 									$to = 'info@sodacs.jp';
 									$from = "From: ".htmlspecialchars($_POST["emailAddress"], 3)."\r\n"."Return-Path: ".htmlspecialchars($_POST["emailAddress"], 3);
 									$title = htmlspecialchars($_POST["emailSubject"], 3);
-									$content = "送信者："+htmlspecialchars($_POST["myouji"], 3)+"　"+htmlspecialchars($_POST["namae"], 3)+"　（"+htmlspecialchars($_POST["myoujiKatakana"], 3)+"　"+htmlspecialchars($_POST["namaeKatakana"], 3)+"）\r\n\r\n"+htmlspecialchars($_POST["emailMessage"], 3);
+									$content = "送信者：".$_POST["myouji"]."　".$_POST["namae"]."　（".$_POST["myoujiKatakana"]."　".$_POST["namaeKatakana"]."）\r\n\r\n".$_POST["emailMessage"];
 									$sent = mb_send_mail($to, $title, $content, $from);
-									if($sent){
+								/*送信成功メッセージを表示する*/
+								if($sent){
 										print'<h1>お問い合わせが送信されました</h1>
 										<div id="sent" style="margin-top: 30%; margin-bottom: 30%;">
 										<h3>ありがとうございます！お問い合わせが送信されましたので、すぐに受信完了の通知があなたのメールアドレスに届くはずです。この通知は自動的に送られ、私自身からの返事ではありません。もし数時間がたってもこの通知が届かない場合は、お手数ですが、もう一度同じお問い合わせを送信して下さい。</h3>
@@ -177,7 +181,8 @@
 										<p>※このフォームを使ったお問い合わせはsodacs.jpのメールアドレスに届きます。その後、私の個人用のメールアドレスにも転送されます。できるだけ早く返事しますが、遅れる場合があります。ライブチャットなど他の方法で連絡したい方は、まずはメールでご相談下さい。</p>
 										';
 									}
-									else{
+								/*送信失敗メッセージを表示する*/
+								else{
 										print'<h1>お問い合わせの送信が失敗しました。</h1>
 										<div id="sent" style="margin-top: 30%; margin-bottom: 30%;">
 										<h3>申し訳ありません。送信できなかったようです。お手数ですが、ページを更新させたり、1ページ戻したりして、再送信してみて下さい。</h3>
@@ -198,7 +203,7 @@
 			<a href="https://github.com/hikawaakihito"><img id="githubLink" src="img/githubLogo.png"></a>
 			<small id="copyright">©Sodacs</small>
 		</div>
-	</footer>	
+	</footer>
 	<script>
 		function resize() {
 			var wih = window.innerHeight;
