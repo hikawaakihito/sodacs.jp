@@ -22,6 +22,36 @@ hr {
 	word-break: break-word;
 }
 
+.pageNavLeft1 {
+	color: #c87137;
+	text-decoration: none;
+	word-break: break-word;
+	float: left;
+}
+
+.pageNavLeft2 {
+	color: #c87137;
+	text-decoration: none;
+	word-break: break-word;
+	float: left;
+	margin-left: 3em;
+}
+
+.pageNavRight1 {
+	color: #c87137;
+	text-decoration: none;
+	word-break: break-word;
+	float: right;
+}
+
+.pageNavRight2 {
+	color: #c87137;
+	text-decoration: none;
+	word-break: break-word;
+	float: right;
+	margin-right: 3em;
+}
+
 .externalLink1 {
 	color: #008080;
 	text-decoration: underline;
@@ -79,6 +109,9 @@ li a:hover, .dropdownMenu:hover .dropdownButton {
 	padding: 1em 1em;
 	text-decoration: none;
 	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .dropdownContent a:hover {
@@ -204,7 +237,8 @@ li a:hover, .dropdownMenu:hover .dropdownButton {
 .portfolioPic {
 	position: relative;
 	top: 2em;
-	width: 80%;
+	max-width: 80%;
+	max-height: 250px;
 }
 
 .portfolioInfo {
@@ -300,6 +334,9 @@ li a:hover, .dropdownMenu:hover .dropdownButton {
 
 .projectLink {
 	word-wrap: break-word;
+	margin-left: 100px;
+	margin-right: 100px;
+	text-align: left;
 }
 
 .projectInner h3 {
@@ -338,7 +375,8 @@ li a:hover, .dropdownMenu:hover .dropdownButton {
 
 .projectPic {
 	margin: 2em 0;
-	width: 60%;
+	max-width: 60%;
+	max-height: 250px;
 }
 
 .archivePic {
@@ -674,6 +712,9 @@ input[type=submit]:hover {
 		padding: 1em 1em;
 		text-decoration: none;
 		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	.dropdownContent a:hover {
@@ -797,7 +838,8 @@ input[type=submit]:hover {
 	}
 
 	.portfolioPic {
-		width: 80%;
+		max-width: 80%;
+		max-height: 250px;
 	}
 
 	/*Project Details*/
