@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<title>ソダックス-新たなバリューが生まれるソリューションを開発します。</title>
-	<meta name="description" content="人の便益になるソリューションを開発し、コミュニケーションを取りながら設計から実施まで念入りに良いアプリケーションを仕上げることが目標です。" />
+	<title>ソダックス - スローンのオフィシャルデベロップメント＆コーディングサイト</title>
+	<meta name="description" content="日々上達しながら、人の便益になるソリューションを設計から運用まで念入りに開発できる一人前のエンジニアを目指しております！" />
 	<link rel="stylesheet" href="css/normalize.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="stylesheet" href="css/home.css"/>
@@ -13,38 +13,15 @@
 </head>
 <body>
 	<header>
-		<div id="menuIconWrapper">
-			<a class="trigger" href="#">
-				<span></span>
-				<span></span>
-				<span></span>
-			</a>
-		</div>
-		<nav>
-			<div id="menuWrapper">
-				<img id="logoS2" src="img/logoS.png" alt="ロゴ画像-小"/>
-				<ul>
-					<li><a href="index.php">トップへ戻る</a></li>	
-					<li class="dropdownMenu">
-						<a href="portfolio.php" class="dropdownButton">ポートフォリオ</a>	
-						<div class="dropdownContent">	
-							<a href="projects/sodacs.php"><?php print "→　ソダックス"; ?></a>
-							<a href="portfolio.php"><?php print "→　未完成"; ?></a>
-							<a href="portfolio.php"><?php print "→　未完成"; ?></a>
-							<a href="archive.php"><?php print "→　アーカイブ"; ?></a>
-						</div>
-					</li>
-					<li><a href="about.php">Sodacsとは</a></li>	
-					<li><a href="contact.php">お問い合わせ</a></li>
-				</ul>
-			</div>
-		</nav>	
+			<?php include('./parts/top_menu.php'); $menu = new topMenu('', 0, 0); $menu->getMenu();?>
 	</header>
 	<main>
 	<section>
 		<div id="contentWrapper">
 			<div id="content">
-				<img id="logoL" src="img/logoL.png" alt="ロゴ画像-大"/>
+				<div id="fadeIn">
+					<img id="logoL" src="img/logoL.png" alt="ロゴ画像-大"/>
+				</div>
 				<div class="revealContainer">
 					<span class="revealText">Sodacsへようこそ</span>
 					<div class="revealBlock"></div>
