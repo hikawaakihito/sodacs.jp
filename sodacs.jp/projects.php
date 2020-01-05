@@ -60,7 +60,7 @@
 							</div>
 							<div class="portfolioInfoArchive"><p>　プロジェクトアーカイブには、公開プロジェクトがすべて載っています。ポートフォリオの陳列にないプロジェクトやすべてのプロジェクトのリスト表示等を見るにはこちらをご覧下さい。</p></div>
 							<div class="portfolioButtonContainer">
-								<a href="archive.php"><div class="portfolioButton"><div class="center" >プロジェクト詳細</div></div></a>
+								<a href="archive.php"><div class="portfolioButton"><div class="center" >アーカイブへ</div></div></a>
 							</div>
 						</div>
 					</div>
